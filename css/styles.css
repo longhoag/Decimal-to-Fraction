@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+}
+
+html,body {
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.page-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    width: 50%;
+    min-width: 800px;
+    height: max-content;
+    margin-top: 5%;
+    border: solid 5px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    width: 100%;
+    font-size: 2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.75);
+    width: 75%;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    text-align: block;
+    line-height: 1.5em;
+    margin-top: 10px;
+}
+
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 25%;
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#output { 
+    width: 50%;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#numerator {
+    width: max-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#denominator {
+    width: 100%;
+    margin-top: 0;
+}
+
+footer {
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 1em;
+    font-family: sans-serif;
+    text-align: block;
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+}
+
+@media (max-width: 800px) {
+    .calculator {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    input, #output {
+        width: 75%;
+    }
+}
