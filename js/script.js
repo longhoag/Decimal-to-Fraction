@@ -148,12 +148,14 @@ function handler(e) {
 
       var loop_num = inside.split(')')[0]; //-- loop number 
       var size = loop_num.split('').length;
-
+      
+      //-- behind the decimal, before the ()
       const first_fraction = {
           numerator: convertable_num,
           denominator: denominator_1,
       };
-
+      
+      //-- sum of first fraction and the whole number
       const first_sum_fraction = {
           numerator: Number(whole * first_fraction.denominator) + Number(first_fraction.numerator),
           denominator: denominator_1,
@@ -167,14 +169,16 @@ function handler(e) {
 
       const numer_fraction = {
           numerator: loop_num,
-          denominator: Math.pow(10, Number(x) + 1),
+          denominator: Math.pow(10, Number(x) + size),
       };
-
+      
+      //-- calculate the result of numer_fraction and denom_fraction
       const last_fraction = {
           numerator: numer_fraction.numerator * denom_fraction.denominator,
           denominator: numer_fraction.denominator * denom_fraction.numerator,
       };
-
+      
+      //-- final ans but not reduced yet 
       const final_fraction = {
           numerator: Number(first_sum_fraction.numerator * last_fraction.denominator) + Number(first_sum_fraction.denominator * last_fraction.numerator),
           denominator: first_sum_fraction.denominator * last_fraction.denominator,
@@ -182,6 +186,7 @@ function handler(e) {
   
       divider = gcd(Number(final_fraction.numerator), Number(final_fraction.denominator));
       
+      //-- final
       const result = {
           numerator: final_fraction.numerator / divider,
           denominator: final_fraction.denominator / divider,
