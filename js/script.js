@@ -78,7 +78,7 @@ function handler(e) {
   }
 
   // Checks for invalid input
-  if (input_number != '' && (!isNum || !legal || invalid_decimal)) {
+  if (input_number != '' && (!isNum || !legal || invalid_decimal || (legal && !decimal && (open_paren == true || close_paren == true)))) {
     output();
     document.getElementById("output").innerHTML = "Invalid Input!";
     document.getElementById("output").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
